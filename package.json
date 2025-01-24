@@ -1,0 +1,11 @@
+{
+  "name": "api-rest",
+  "version": "1.0.0",
+  "description": "Criando API REST com node.js",
+  "main": "src/server.js",
+  "scripts": {
+    
+  },
+  "author": "Pablo Henrique Ferreira de França",
+  "license": "ISC"
+}
