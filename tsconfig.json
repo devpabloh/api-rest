@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",                      // Define o padrão de JavaScript gerado
+    "lib": ["ES2023", "DOM"],               // Suporte para APIs modernas e DOM (se for um app web)
+    "module": "node16",  
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,        
+    "skipLibCheck": true
+  }
+}
