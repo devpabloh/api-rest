@@ -1,4 +1,5 @@
 import { Request, Response } from "express"
+import { AppError } from "../utils/AppError"
 
 class ProductsController{
   
@@ -11,7 +12,7 @@ index(request: Request, response: Response){
 create(request:Request, response: Response){
   const {name, price} = request.body // Aqui estamos recuperando de acordo com a requisição feita no no body do post (name, price)
 
-  throw new Error("Erro de exemplo!")
+  throw new AppError("Erro ao tentar criar um produto!")
 
   response.status(201).json({name, price, user_id: request.user_id}) // aqui estamos passando o status code e transformando a resposta em um objeto.json()
 }
