@@ -1,5 +1,6 @@
 import { routes } from "./Routes"
 import express, { Request, Response, NextFunction } from "express"
+import { AppError } from "./utils/AppError"
 
 const PORT = 3333
 
@@ -14,6 +15,9 @@ Status code
  500 (Internal Server Error): Erro interno do servidor.
 */
 app.use((error: any, request: Request, response: Response, next: NextFunction)=>{
+    if(error instanceof AppError){
+        return response.status(error.statusCode).json({message: error.message})
+    }
     response.status(500).json({message: error.message})
 }) // o tratamento de excessões tem que ser realizado no final, porque ela vai conseguir capturar qualquer erro que já tenha ocorrido nos passos anteriores
 
