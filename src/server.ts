@@ -14,10 +14,8 @@ Status code
  400 (Bad Request): Erro do cliente.
  500 (Internal Server Error): Erro interno do servidor.
 */
-app.use((error: any, request: Request, response: Response, next: NextFunction)=>{
-    if(error instanceof AppError){
-        return response.status(error.statusCode).json({message: error.message})
-    }
+app.use((error: any, request: Request, response: Response, _: NextFunction) => {
+    
     response.status(500).json({message: error.message})
 }) // o tratamento de excessões tem que ser realizado no final, porque ela vai conseguir capturar qualquer erro que já tenha ocorrido nos passos anteriores
 
